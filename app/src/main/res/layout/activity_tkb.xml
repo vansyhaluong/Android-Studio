@@ -72,19 +72,11 @@
             android:text="Lịch học trong tuần"
             android:textSize="18sp"
             android:textStyle="bold"
-
             android:layout_height="wrap_content"
             android:textColor="#212121"
             android:layout_width="0dp"
             android:layout_weight="1"/>
 
-        <TextView
-            android:id="@+id/tvSoMon"
-            android:text="0 môn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#6200EE"
-            android:textStyle="bold"/>
     </LinearLayout>
 
     <!-- ===== DANH SÁCH TKB ===== -->

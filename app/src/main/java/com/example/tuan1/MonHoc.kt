@@ -99,6 +99,24 @@ class MonHoc : AppCompatActivity() {
                 R.id.menu_home -> {
                     startActivity(Intent(this, CuoiKy::class.java))
                 }
+                R.id.menu_score -> {
+                    val intent = Intent(this, ActivityNhapDiem::class.java)
+                    intent.putExtra("USER_ROLE", userRole)
+                    startActivity(intent)
+                }
+                R.id.menu_thongke -> {
+                    val intent = Intent(this, ActivityThongKe::class.java)
+                    intent.putExtra("USER_ROLE", userRole)
+                    startActivity(intent)
+                }
+                R.id.menu_tkb -> {
+                    val intent = Intent(this, ActivityTKB::class.java)
+                    intent.putExtra("USER_ROLE", userRole)
+                    startActivity(intent)
+                }
+                R.id.item_thoat -> {
+                    startActivity(Intent(this, CuoiKy::class.java))
+                }
             }
 
             drawerLayout.closeDrawers()
@@ -143,8 +161,13 @@ class MonHoc : AppCompatActivity() {
                 }
 
                 val monHoc = DB_MonHoc(maMon = maMon, tenMon = tenMon, tinChi = tinChi, maHocKy = idHocKy)
-                CoroutineScope(Dispatchers.IO).launch { db.monHocDao().insert(monHoc) }
-                loadData()
+                CoroutineScope(Dispatchers.IO).launch {
+                    db.monHocDao().insert(monHoc)
+                    val list = db.monHocDao().getAll()
+                    runOnUiThread {
+                        adapter.updateData(list)
+                    }
+                }
             }
             .setNegativeButton("Hủy", null)
             .show()

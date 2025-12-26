@@ -17,4 +17,8 @@
         android:id="@+id/menu_nhapdiem"
         android:title="Nhập điểm"
         />
+    <item
+        android:id="@+id/menu_thoatTK"
+        android:title="Thoát"
+        />
 </menu>

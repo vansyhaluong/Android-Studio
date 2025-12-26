@@ -82,7 +82,7 @@ class ActivityTKB : AppCompatActivity() {
         rvTKB = findViewById(R.id.rvTKB)
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.title = "Quản lý thời khóa biểu"
+        supportActionBar?.title = "Quản lý thời khóa biểu - Trần Văn Tiên"
         fabAdd = findViewById(R.id.fabAddTK)
         spLocTuan = findViewById(R.id.spinnerTuan)
         rvTKB.layoutManager = LinearLayoutManager(this)

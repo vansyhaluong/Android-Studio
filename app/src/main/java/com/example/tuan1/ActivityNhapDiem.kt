@@ -71,7 +71,11 @@ class ActivityNhapDiem : AppCompatActivity() {
         when(item.itemId){
             R.id.menu_home -> startActivity(Intent(this, CuoiKy::class.java))
             R.id.menu_monhoc -> startActivity(Intent(this, MonHoc::class.java))
-            R.id.menu_tkb -> startActivity(Intent(this, ActivityTKB::class.java))
+            R.id.menu_tkb -> {
+                val intent = Intent(this, ActivityTKB::class.java)
+                intent.putExtra("USER_ROLE", userRole)
+                startActivity(intent)
+            }
             R.id.menu_thongke -> startActivity(Intent(this, ActivityThongKe::class.java))
         }
         return super.onOptionsItemSelected(item)

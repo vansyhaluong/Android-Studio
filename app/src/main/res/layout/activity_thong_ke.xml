@@ -20,6 +20,7 @@
             android:title="📊 Thống kê kết quả học tập"
             android:titleTextColor="#FFFFFF"
             android:elevation="4dp"
+            app:titleTextColor="@color/white"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"/>
 

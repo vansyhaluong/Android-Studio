@@ -14,17 +14,18 @@
         android:icon="@drawable/ic_nhapdiem"/>
 
     <item
-        android:id="@+id/menu_schedule"
+        android:id="@+id/menu_tkb"
         android:title="Thời khóa biểu"
         android:icon="@drawable/ic_lichhoc"/>
 
     <item
-        android:id="@+id/menu_statistic"
+        android:id="@+id/menu_thongke"
         android:title="Thống kê"
         android:icon="@drawable/icon_menu"/>
+
     <item
-        android:id="@+id/item_thongke"
-        android:title="Quản lý môn học"
-        android:icon="@drawable/icon_management"
+        android:id="@+id/item_thoat"
+        android:title="Thoát"
+        android:icon="@drawable/ic_exit"
         />
 </menu>

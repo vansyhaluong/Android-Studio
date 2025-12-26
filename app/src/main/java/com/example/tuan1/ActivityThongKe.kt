@@ -40,10 +40,8 @@ class ActivityThongKe : AppCompatActivity() {
         setEvent()
         adapterHK1 = ThongKeAdapter(emptyList())
         adapterHK2 = ThongKeAdapter(emptyList())
-
         rvHK1.layoutManager = LinearLayoutManager(this)
         rvHK2.layoutManager = LinearLayoutManager(this)
-
         rvHK1.adapter = adapterHK1
         rvHK2.adapter = adapterHK2
 
@@ -61,6 +59,7 @@ class ActivityThongKe : AppCompatActivity() {
             R.id.menu_monhoc -> startActivity(Intent(this, MonHoc::class.java))
             R.id.menu_tkb -> startActivity(Intent(this, ActivityTKB::class.java))
             R.id.menu_nhapdiem -> startActivity(Intent(this, ActivityNhapDiem::class.java))
+            R.id.menu_thoatTK -> startActivity(Intent(this, Login::class.java))
         }
         return super.onOptionsItemSelected(item)
     }
@@ -73,6 +72,8 @@ class ActivityThongKe : AppCompatActivity() {
         tvHocLucHK2 = findViewById(R.id.tvHocLucHK2)
         toolbar=findViewById(R.id.toolbarTK)
         setSupportActionBar(toolbar)
+        supportActionBar?.title ="\uD83D\uDCCA Thống kê kết quả học tập"
+
     }
     private fun setEvent(){
 
@@ -104,7 +105,7 @@ class ActivityThongKe : AppCompatActivity() {
 
     private fun xepLoaiHocLuc(gpa: Double): String {
         return when {
-            gpa >= 8.5 -> "Giỏi"
+            gpa >= 8.0 -> "Giỏi"
             gpa >= 7.0 -> "Khá"
             gpa >= 5.0 -> "Trung bình"
             else -> "Yếu"
